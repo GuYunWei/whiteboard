@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.onyx-popup {
+		float: left;
+	    font-size: 16px;
+	    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+	    /*border: 1px solid rgba(0, 0, 0, 0.2);*/
+	    border: 1px solid #fff;
+	    border-radius: 8px;
+	    padding: 6px;
+	     color: #ffffff; 
+	    background: #4c4c4c url(gradient.png) repeat-x 0 bottom;
+	}
+	.onyx-spinner {
+    width: 59px;
+    height: 58px;
+    display: inline-block;
+    background: url(spinner-dark.gif) no-repeat 0 0;
+}
+	</style>
+</head>
+<body>
+	<div class="enyo-popup enyo-no-touch-action onyx-popup" id="app_loadingPopup"><div class="onyx-spinner" id="app_spinner"></div></div>
+</body>
+</html>

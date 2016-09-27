@@ -1,0 +1,81 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<title>canvas</title>
+	<style type="text/css"> 
+html,body,canvas,div,ul,li,h5,p{ margin:0; padding:0;-moz-user-select:none; -webkit-user-select:none; }
+img{ border:1px #ccc solid;}
+ul,li{ list-style:none;}
+.wrap{ width:740px; margin:20px auto 5px; border:1px #ccc solid; overflow:hidden;}
+.fl{ float:left; display:inline;}
+#canvas{ border-right:1px #ccc solid; /*cursor:crosshair;*/}
+#control{ width:130px; height:400px; margin-left:4px;}
+#control div{ padding:5px;}
+#canvas-color ul{ overflow:hidden;}
+#canvas-color ul li{ float:left; display:inherit; width:13px; height:13px; border:2px #fff solid; margin: 5px 3px 0 0; border-radius: 5px; cursor:pointer;}
+#canvas-color ul li.js-border-color{ border-color:#000;}
+#canvas-brush span{ display:inline-block; width:10px; height:10px; margin:5px 0 0 10px; background:url(brush.png); cursor:pointer;}
+#canvas-brush span.small-brush{ background-position:-6px -6px;}
+#canvas-brush span.middle-brush{ background-position:-31px -6px;}
+#canvas-brush span.big-brush{ background-position:-56px -6px;}
+#canvas-brush span.js-bg-color{ background-color:#aaa;}
+#canvas-control span{ display:inline-block; width:20px; height:15px; margin:5px 0 0 10px; background:url(sketchpad_icons.png); cursor:pointer;}
+#canvas-control span.return-control{ background-position:-2px -148px;}
+#canvas-control span.next-control{ background-position:right -168px;}
+#canvas-control span.empty-control{ background-position:-2px -188px;}
+#canvas-control span.js-return-control{ background-position:-2px -209px;}
+#canvas-control span.js-next-control{ background-position:right -230px;}
+#canvas-control span.js-empty-control{ background-position:-2px -251px;}
+#canvas-drawImage>p{ margin-top: 5px; }
+#imgDiv{ text-align:center;}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<canvas id="canvas" class="fl" width="600" height="400"></canvas>
+		<div id="control" class="fl">
+			<div id="canvas-color">
+				<h5>画笔颜色</h5>
+				<ul>
+					<li style="background:#000000;" class="js-border-color"></li>
+					<li style="background:#0018ba"></li>
+					<li style="background:#ffc200"></li>
+					<li style="background:#5ab639"></li>
+					<li style="background:#FF0000;"></li>
+					<li style="background:#80FF00;"></li>
+					<li style="background:#00FFFF;"></li>
+					<li style="background:#808080;"></li>
+					<li style="background:#FF8000;"></li>
+					<li style="background:#408080;"></li>
+					<li style="background:#8000FF;"></li>
+					<li style="background:#CCCC00;"></li>
+				</ul>
+			</div>
+			<div id="canvas-brush">
+				<h5>画笔大小</h5>
+				<span class="small-brush js-bg-color"></span>
+				<span class="middle-brush"></span>
+				<span class="big-brush"></span>
+			</div>
+			<div id="canvas-control">
+				<h5>操作</h5>
+				<span title="上一步" class="return-control"></span>
+				<span title="下一步" class="next-control"></span>
+				<span title="清除" class="empty-control"></span>
+			</div>
+			<div id="canvas-drawImage">
+				<h5>生成图像</h5>
+				<p>
+					<button class="drawImage">生成图像</button>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="imgDiv"></div>
+	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="draw3.js"></script>
+</body>
+</html>
